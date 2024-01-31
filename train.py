@@ -257,14 +257,14 @@ if __name__ == '__main__':
     P = {}
     
     # Top-level parameters:
-    P['dataset'] = 'nuswide' # pascal, coco, nuswide, cub
+    P['dataset'] = 'pascal' # pascal, coco, nuswide, cub
     P['loss'] = 'role' # bce, bce_ls, iun, iu, pr, an, an_ls, wan, epr, role
     P['train_mode'] = 'linear_init' # linear_fixed_features, end_to_end, linear_init
     P['val_set_variant'] = 'clean' # clean, observed
     
     # Paths and filenames:
     P['experiment_name'] = 'multi_label_experiment'
-    P['load_path'] = './data'
+    P['load_path'] = '/mnt/Datasets/VOC/voc2012/'
     P['save_path'] = './results'
 
     # Optimization parameters:
@@ -314,8 +314,8 @@ if __name__ == '__main__':
     P['feature_extractor_arch'] = 'resnet50'
     P['feat_dim'] = lookup['feat_dim'][P['feature_extractor_arch']]
     P['expected_num_pos'] = lookup['expected_num_pos'][P['dataset']]
-    P['train_feats_file'] = './data/{}/train_features_imagenet_{}.npy'.format(P['dataset'], P['feature_extractor_arch'])
-    P['val_feats_file'] = './data/{}/val_features_imagenet_{}.npy'.format(P['dataset'], P['feature_extractor_arch'])
+    P['train_feats_file'] = '/mnt/Datasets/VOC/voc2012/train_features_imagenet_{}.npy'.format(P['feature_extractor_arch'])
+    P['val_feats_file'] = '/mnt/Datasets/VOC/voc2012/val_features_imagenet_{}.npy'.format(P['feature_extractor_arch'])
     
     # run training process:
     best_params = None

@@ -61,7 +61,8 @@ def observe_uniform(label_matrix, num_pos, num_neg, rng):
     
     return label_matrix_obs
 
-base_path = os.path.join('../data/{}'.format(args.dataset))
+# base_path = os.path.join('../data/{}'.format(args.dataset))
+base_path = os.path.join("/mnt/Datasets/VOC/voc2012/")
 
 for phase in ['train', 'val']:
     # load ground truth binary label matrix:

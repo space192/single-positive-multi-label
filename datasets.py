@@ -11,8 +11,8 @@ def get_metadata(dataset_name):
     if dataset_name == 'pascal':
         meta = {
             'num_classes': 20,
-            'path_to_dataset': 'data/pascal',
-            'path_to_images': 'data/pascal/VOCdevkit/VOC2012/JPEGImages'
+            'path_to_dataset': '/mnt/Datasets/VOC/voc2012/',
+            'path_to_images': '/mnt/Datasets/VOC/voc2012/VOCdevkit/VOC2012/JPEGImages'
         }
     elif dataset_name == 'coco':
         meta = {
@@ -148,10 +148,14 @@ class multilabel:
         
         # get dataset metadata:
         meta = get_metadata(P['dataset'])
+        print(meta)
+
         self.base_path = meta['path_to_dataset']
         
         # load data:
         source_data = load_data(self.base_path, P)
+
+        print(source_data)
         
         # generate indices to split official train set into train and val:
         split_idx = {}
